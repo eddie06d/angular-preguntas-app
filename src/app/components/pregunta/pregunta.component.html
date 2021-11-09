@@ -1,0 +1,35 @@
+<nav class="navbar navbar-light bg-info">
+  <div class="container-fluid d-flex justify-content-center">
+    <span class="navbar-brand mb-0 h1 py-2">PREGUNTAS Y RESPUESTAS</span>
+  </div>
+</nav>
+<div class="container">
+  <div class="col-lg-12 mt-4">
+    <div class="card text-center">
+      <div class="card-body">
+        <div class="mb-2">
+          <span class="title">{{ pregunta.title }}</span>
+          <span class="float-end timer py-1">{{ timer }}</span>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item list-group-item-action pointer {{opcion.sel ? 'active':''}}" (click)="seleccionarOpcion(i)" *ngFor="let opcion of pregunta.opciones; let i=index;">
+            {{ opcion.descripcion }}
+            <span class="badge" *ngIf="iconCorrecto(opcion)"><i class="fas fa-check-circle text-success"></i></span>
+            <span class="badge" *ngIf="iconIncorrecto(opcion)"><i class="fas fa-times-circle text-danger"></i></span>
+          </a>
+          <!-- <a class="list-group-item list-group-item-action pointer {{pregunta.opciones[1].sel ? 'active':''}}" (click)="seleccionarOpcion(1)">
+            {{ pregunta.opciones[1].descripcion }}
+          </a>
+          <a class="list-group-item list-group-item-action pointer {{pregunta.opciones[2].sel ? 'active':''}}" (click)="seleccionarOpcion(2)">
+            {{ pregunta.opciones[2].descripcion }}
+          </a>
+          <a class="list-group-item list-group-item-action pointer {{pregunta.opciones[3].sel ? 'active':''}}" (click)="seleccionarOpcion(3)">
+            {{ pregunta.opciones[3].descripcion }}
+          </a> -->
+        </div>
+        <button class="btn btn-info mt-3 btn-lg" [disabled]="boton" (click)="aceptar()" *ngIf="!siguiente">Aceptar</button>
+        <button class="btn btn-info mt-3 btn-lg" (click)="siguientePreg()" *ngIf="siguiente">{{ messageBoton }}</button>
+      </div>
+    </div>
+  </div>
+</div>

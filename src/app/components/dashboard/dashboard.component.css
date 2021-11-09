@@ -1,0 +1,7 @@
+.container-fluid span {
+  font-size: 1.9rem;
+}
+.card-body button {
+  width: 300px;
+  background-color: #28b2bf;
+}

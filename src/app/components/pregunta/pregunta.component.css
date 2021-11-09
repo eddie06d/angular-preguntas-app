@@ -1,0 +1,25 @@
+.container-fluid span {
+  font-size: 1.9rem;
+}
+.pointer {
+  cursor: pointer;
+}
+.card-body button {
+  width: 300px;
+  /* background-color: #28b2bf; */
+}
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.timer {
+  padding: 7px;
+  border-radius: 38%;
+  background-color: black;
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.badge {
+  float: right;
+}
